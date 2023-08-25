@@ -1,18 +1,19 @@
 ## 新規登録
-# POST http://127.0.0.1:3000/api/v1/auth HTTP/1.1
+POST http://127.0.0.1:3000/api/v1/auth HTTP/1.1
+content-type: application/json
+
+{
+	"email": "murata.naoya0424@gmail.com",
+	"password": "murata0424",
+	"password_confirmation": "murata0424",
+	"confirm_success_url": "https://google.com" // メール認証した時のリダイレクト先
+}
+
+## ログイン
+# POST http://127.0.0.1:3000/api/v1/auth/sign_in HTTP/1.1
 # content-type: application/json
 
 # {
 # 	"email": "sample@example.com",
-# 	"password": "password",
-# 	"password_confirmation": "password"
+# 	"password": "password"
 # }
-
-## ログイン
-POST http://127.0.0.1:3000/api/v1/auth/sign_in HTTP/1.1
-content-type: application/json
-
-{
-	"email": "sample@example.com",
-	"password": "password"
-}
