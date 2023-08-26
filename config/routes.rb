@@ -9,6 +9,8 @@ Rails.application.routes.draw do
       namespace :auth do
         get 'authentication' => "authentication#whoami"
       end
+
+      get '/test', to: 'test#home'
     end
   end
 end
