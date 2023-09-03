@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       end
 
       get '/test', to: 'test#home'
+      resources :content_movies, only: [:index, :show, :create]
     end
   end
 end
