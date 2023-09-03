@@ -41,11 +41,9 @@ ActiveRecord::Schema.define(version: 2023_09_01_133618) do
   end
 
   create_table "content_movies", force: :cascade do |t|
-    t.string "title"
-    t.boolean "is_public"
+    t.string "title", null: false
+    t.boolean "is_public", default: true, null: false
     t.string "category"
-    t.string "image"
-    t.text "movie"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

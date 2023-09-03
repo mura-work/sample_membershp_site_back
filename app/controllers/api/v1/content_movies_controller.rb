@@ -1,6 +1,7 @@
 class Api::V1::ContentMoviesController < ApplicationController
 	def index
-		render json: ContentMovie.all, methods: [:image_url]
+		contents = ContentMovie.all, methods: [:image_url]
+		render json: contents
 	end
 
 	def show
@@ -9,7 +10,10 @@ class Api::V1::ContentMoviesController < ApplicationController
 	end
 
 	def create
-		content_movie = ContentMovie.new(content_movie_params)
+		# content_movie = ContentMovie.new(content_movie_param)
+		content_movie = ContentMovie.new
+		content_movie.title = params[:title]
+		content_movie.image = params[:image]
 		if content_movie.save
 			render json: content_movie, methods: [:image_url]
 		else
@@ -17,7 +21,8 @@ class Api::V1::ContentMoviesController < ApplicationController
 		end
 	end
 
+	private
 	def content_movie_params
-		params.permit(:title, :category, :image)
+		params.permit(:title, :image)
 	end
 end
