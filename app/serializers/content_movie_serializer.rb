@@ -6,4 +6,8 @@ class ContentMovieSerializer < ActiveModel::Serializer
   def image_url
 		image.attached? ? url_for(image) : nil
 	end
+
+  def content_image
+    object.content_image.url
+  end
 end
