@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2023_09_01_133618) do
     t.string "title", null: false
     t.boolean "is_public", default: true, null: false
     t.string "category"
+    t.string "content_image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
